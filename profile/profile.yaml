@@ -1,0 +1,106 @@
+# Preferred name (Characters only)
+name: "Kayssé Rachid"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_KaysseRachid
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I am Kayssé Rachid, a dedicated software engineer with a BEng in Software Engineering from Concordia University. My professional journey has seen me take on pivotal roles such as a Full-Stack Developer/SCRUM Master at Elance DEI, a Backend Developer Intern at CLE, and a Full-Stack Developer Intern at Nakisa. I specialize in Full-Stack development with technologies such as Java Spring, React, Vue.js and SQL databases.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Spring / SpringBoot
+    - JUnit
+    - C#
+    - JavaScript
+    - React
+    - SQL (MySQL, PostgreSQL)
+    - Scrum/Agile
+    - Git
+    - REST APIs
+  # At least 5 skills
+  competent:
+    - Python
+    - Node.js
+    - Vue.js
+    - CI/CD
+    - Cloud Azure
+  # At least 5 skills
+  familiar:
+    - NoSQL (MongoDB)
+    - C++
+    - C
+    - Angular
+    - Google Cloud Platform (GCP)
+    - Linux
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Designed a Linux cluster to monitor and collect hardware specification data and resource usage data from Linux servers. The project is implemented using various technologies such as Bash scripts for data collection, PostgreSQL for data storage, Docker for containerization, and Git for version control.
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Grep App: Implemented a Java application that simulate Linux grep command which allows users to search matching strings from a file."
+      - "JDBC App: Developed a trading platform REST API calling Alpha Vantage API to gather the latest stock information"
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: ""
+  - name: "Python Data Analytics"
+    git_url: "/python_data_anlytics"
+    description: ""
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: ""
+  - name: "Spark"
+    git_url: "/spark"
+    description: ""
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+  #project name
+  - name: "ServiceHub"
+    #URL is optional
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: During my university capstone project, developed a web application allowing customers to book professional services, and workers to advertise their service across Montreal and its surroundings. Implemented the backend using C# and following the CQRS architecture, the frontend with React, and persisted the data with a PostgreSQL database.
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2024-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: ""
+  - title: "Full-Stack Developer / SCRUM Master"
+    company: "Elance DEI"
+    duration: "May 2023 - December 2023"
+    description: "Designed features from end-to-end for an HR learning platform, created and managed the development and production pipelines in Azure, and led Agile development processes."
+  - title: "Backend Developer Intern"
+    company: "CLE"
+    duration: "December 2022 - March 2023"
+    description: "Developed microservices for a reservation platform, improved API Gateway implementation, and achieved high test coverage with NUnit."
+  - title: "Full-Stack Developer Intern"
+    company: "Nakisa"
+    duration: "May 2022 - August 2022"
+    description: "Developed features for a B2B Real Estate application using Java Spring and Vue.js. Facilitated real-time tracking and management, and implemented testing for each features that I worked on."
+
+#List of edcuation
+education:
+  - school_name: "Concordia University"
+    duration: "2018-2022"
+    degree: "Bachelor of Engineering"
+    department: "Software Engineering"
