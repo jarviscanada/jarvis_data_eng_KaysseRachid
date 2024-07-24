@@ -82,9 +82,9 @@ professional_experience:
   #Write your Jarvis role as a professional experience rather than training.
   - title: "Software Developer"
     company: "Jarvis"
-    duration: "2024-present"
+    duration: "June 2024 - Present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: ""
+    description: "Working on various projects as a Jarvis Consultant, such as a Linux Cluster Monitor App, a Java Grep App to perform Linux grep commands and a Java Stock App that retrieves the latest stock market data from an API."
   - title: "Full-Stack Developer / SCRUM Master"
     company: "Elance DEI"
     duration: "May 2023 - December 2023"
@@ -110,7 +110,9 @@ education:
 #Optional section
 others:
   #category
-  - title: ""
+  - title: "Activities"
     #list of items
     bullets:
-      - ""
+      - "Soccer friendly league"
+      - "Reading"
+      - "Travelling (only 1 continent left to visit)"
