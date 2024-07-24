@@ -1,0 +1,105 @@
+# Java related
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.idea/
+.idea/**/*
+*.ipr
+*.iws
+*.iml
+out/
+
+# VS Code
+.vscode/
+.vscode/*
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+
+# Compiled binary output
+bin/
+*.class
+*.war
+*.ear
+
+# Dependency directory
+lib/
+
+# Build directory
+build/
+dist/
+target/
+
+# Generated files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~.nib
+*.orig
+*.DS_Store
+*.swp
+._*
+.Spotlight-V100
+.Trashes
+.vscode
+
+# IDE specific files
+.project
+.classpath
+.cproject
+.settings/
+.cache
+.buildpath
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.exe
+*.dll
+*.so
+*.dmg
+*.pkg
+*.deb
+
+# Others
+!.mvn/wrapper/maven-wrapper.jar
+!src/main/resources/**.properties
+!src/main/resources/**.xml
+!src/main/resources/**.yml
+!src/main/resources/**.json
+
+
+
