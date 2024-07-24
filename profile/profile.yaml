@@ -104,8 +104,7 @@ education:
     duration: "2018-2022"
     degree: "Bachelor of Engineering"
     department: "Software Engineering"
-    # optional
-    awards_achievements: ""
+    awards_achievements:
 
 #Optional section
 others:
