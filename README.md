@@ -19,7 +19,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_KaysseRach
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_KaysseRachid/tree/master/core_java)]:
       
-  - Grep App: Implemented a Java application that simulate Linux grep command which allows users to search matching strings from a file.
+  - Grep App: Implemented a Java application that simulates Linux grep command which allows users to search matching strings from a file.
   - JDBC App: Developed a trading platform REST API calling Alpha Vantage API to gather the latest stock information
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_KaysseRachid/tree/master/springboot)]: Not Started
@@ -45,7 +45,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_KaysseRach
 
 **Backend Developer Intern, CLE (December 2022 - March 2023)**: Developed microservices for a reservation platform, improved API Gateway implementation, and achieved high test coverage with NUnit.
 
-**Full-Stack Developer Intern, Nakisa (May 2022 - August 2022)**: Developed features for a B2B Real Estate application using Java Spring and Vue.js. Facilitated real-time tracking and management, and implemented testing for each features that I worked on.
+**Full-Stack Developer Intern, Nakisa (May 2022 - August 2022)**: Developed features for a B2B Real Estate application using Java Spring and Vue.js. Facilitated real-time tracking and management, and implemented testing for each feature that I worked on.
 
 
 ## Education

@@ -48,7 +48,7 @@ jarvis_projects:
   - name: "Core Java Apps"
     git_url: "/core_java"
     description:
-      - "Grep App: Implemented a Java application that simulate Linux grep command which allows users to search matching strings from a file."
+      - "Grep App: Implemented a Java application that simulates Linux grep command which allows users to search matching strings from a file."
       - "JDBC App: Developed a trading platform REST API calling Alpha Vantage API to gather the latest stock information"
   - name: "Springboot App"
     git_url: "/springboot"
@@ -96,7 +96,7 @@ professional_experience:
   - title: "Full-Stack Developer Intern"
     company: "Nakisa"
     duration: "May 2022 - August 2022"
-    description: "Developed features for a B2B Real Estate application using Java Spring and Vue.js. Facilitated real-time tracking and management, and implemented testing for each features that I worked on."
+    description: "Developed features for a B2B Real Estate application using Java Spring and Vue.js. Facilitated real-time tracking and management, and implemented testing for each feature that I worked on."
 
 #List of edcuation
 education:
