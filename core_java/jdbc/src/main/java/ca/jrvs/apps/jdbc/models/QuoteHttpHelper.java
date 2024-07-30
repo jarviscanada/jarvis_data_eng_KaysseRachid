@@ -63,7 +63,7 @@ public class QuoteHttpHelper
 
             return quote;
         } catch (IOException | ParseException e) {
-            throw new IllegalArgumentException("Failed to fetch data ", e);
+            throw new IllegalArgumentException("Failed to fetch data from httpHelper", e);
         }
     }
 

@@ -44,7 +44,7 @@ public class QuoteDao implements CrudDao<Quote, String>
             statement.setTimestamp(11, entity.getTimestamp());
             return entity;
         } catch (SQLException e) {
-            throw new IllegalArgumentException("Failed to fetch data", e);
+            throw new IllegalArgumentException("Failed to fetch data from dao", e);
         } finally {
             if (connection != null && !connection.isClosed()) connection.close();
         }
@@ -53,7 +53,7 @@ public class QuoteDao implements CrudDao<Quote, String>
     public Optional<Quote> findById(String id) throws IllegalArgumentException, SQLException
     {
         connect();
-        String sql = "SELECT * FROM quote WHERE symbol = ?1";
+        String sql = "SELECT * FROM quote WHERE symbol = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
             ResultSet result = statement.executeQuery();
@@ -76,7 +76,7 @@ public class QuoteDao implements CrudDao<Quote, String>
                 return Optional.empty();
             }
         } catch (SQLException e) {
-            throw new IllegalArgumentException("Failed to fetch data", e);
+            throw new IllegalArgumentException("Failed to fetch data from dao", e);
         } finally {
             if (connection != null && !connection.isClosed()) connection.close();
         }
@@ -108,7 +108,7 @@ public class QuoteDao implements CrudDao<Quote, String>
             }
             return quotes;
         } catch (SQLException e) {
-            throw new IllegalArgumentException("Failed to fetch data", e);
+            throw new IllegalArgumentException("Failed to fetch data from dao", e);
         } finally {
             if (connection != null && !connection.isClosed()) connection.close();
         }

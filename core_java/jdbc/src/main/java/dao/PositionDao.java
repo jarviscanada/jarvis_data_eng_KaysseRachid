@@ -27,12 +27,14 @@ public class PositionDao implements CrudDao<Position, String>
     public Position save(Position entity) throws IllegalArgumentException, SQLException
     {
         connect();
-        String sql = "INSERT INTO position (symbol, number_of_shares, value_paid nt) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO position (symbol, number_of_shares, value_paid) VALUES (?, ?, ?)" +
+                "ON CONFLICT (symbol) DO UPDATE SET number_of_shares = EXCLUDED.number_of_shares, value_paid = EXCLUDED.value_paid";;
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, entity.getTicker());
             statement.setInt(2, entity.getNumOfShares());
             statement.setDouble(3, entity.getValuePaid());
+            statement.executeUpdate();
             return entity;
         } catch (SQLException e) {
             throw new IllegalArgumentException("Failed to fetch data", e);
@@ -44,7 +46,7 @@ public class PositionDao implements CrudDao<Position, String>
     public Optional<Position> findById(String id) throws IllegalArgumentException, SQLException
     {
         connect();
-        String sql = "SELECT * FROM quote WHERE symbol = ?1";
+        String sql = "SELECT * FROM position WHERE symbol = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
             ResultSet result = statement.executeQuery();
@@ -68,7 +70,7 @@ public class PositionDao implements CrudDao<Position, String>
     public Iterable<Position> findAll() throws SQLException
     {
         connect();
-        String sql = "SELECT * FROM quote";
+        String sql = "SELECT * FROM position";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ArrayList<Position> positions = new ArrayList<>();
@@ -92,7 +94,7 @@ public class PositionDao implements CrudDao<Position, String>
     public void deleteById(String id) throws SQLException
     {
         connect();
-        String sql = "DELETE FROM quote WHERE symbol = ?";
+        String sql = "DELETE FROM position WHERE symbol = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
@@ -111,7 +113,7 @@ public class PositionDao implements CrudDao<Position, String>
     public void deleteAll() throws SQLException
     {
         connect();
-        String sql = "DELETE FROM quote";
+        String sql = "DELETE * FROM position";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             int rowsAffected = statement.executeUpdate();
