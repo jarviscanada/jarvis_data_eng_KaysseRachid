@@ -1,7 +1,5 @@
 package ca.jrvs.apps.jdbc.models;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.sql.Timestamp;
 import java.sql.Date;
 
@@ -146,5 +144,22 @@ public class Quote
     public Timestamp getTimestamp()
     {
         return timestamp;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "symbol='" + ticker + '\'' +
+                ", open=" + open +
+                ", high=" + high +
+                ", low=" + low +
+                ", price=" + price +
+                ", volume=" + volume +
+                ", latestTradingDay=" + latestTradingDay +
+                ", previousClose=" + previousClose +
+                ", change=" + change +
+                ", changePercent='" + changePercent + '\'' +
+                ", timestamp=" + timestamp +
+                '}';
     }
 }

@@ -48,4 +48,13 @@ public class Position
     {
         this.valuePaid = valuePaid;
     }
+
+    @Override
+    public String toString()
+    {
+        return  '\n' + ticker + ": " +
+                "numOfShares = " + numOfShares +
+                ", valuePaid = " + valuePaid + "$" +
+                "}";
+    }
 }

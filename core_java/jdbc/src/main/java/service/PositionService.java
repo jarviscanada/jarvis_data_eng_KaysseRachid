@@ -13,6 +13,14 @@ public class PositionService
     private PositionDao positionDao;
     private QuoteDao quoteDao;
 
+    public PositionService(PositionDao positionDao, QuoteDao quoteDao)
+    {
+        this.positionDao = positionDao;
+        this.quoteDao = quoteDao;
+    }
+
+    public PositionService() {}
+
     public PositionDao getPositionDao()
     {
         return positionDao;
@@ -73,5 +81,10 @@ public class PositionService
         } else {
             throw new IllegalArgumentException("Ticker does not exist");
         }
+    }
+
+    public Iterable<Position> findAllPositions() throws SQLException
+    {
+        return positionDao.findAll();
     }
 }

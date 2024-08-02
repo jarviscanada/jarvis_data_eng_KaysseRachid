@@ -12,6 +12,14 @@ public class QuoteService
     private QuoteDao dao;
     private QuoteHttpHelper httpHelper;
 
+    public QuoteService(QuoteDao dao, QuoteHttpHelper httpHelper)
+    {
+        this.dao = dao;
+        this.httpHelper = httpHelper;
+    }
+
+    public QuoteService() {}
+
     public QuoteDao getDao()
     {
         return dao;

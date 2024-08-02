@@ -16,12 +16,18 @@ import java.sql.Date;
 public class QuoteHttpHelper
 {
 
-    private final String apiKey = "6KSWVQPWVAC05091";
+    private String apiKey = "6KSWVQPWVAC05091";
     private OkHttpClient client;
 
     public QuoteHttpHelper()
     {
         this.client = new OkHttpClient();
+    }
+
+    public QuoteHttpHelper(String apiKey, OkHttpClient client)
+    {
+        this.apiKey = apiKey;
+        this.client = client;
     }
 
     /**

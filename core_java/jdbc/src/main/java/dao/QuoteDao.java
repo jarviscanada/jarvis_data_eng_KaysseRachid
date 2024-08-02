@@ -8,25 +8,20 @@ import java.util.Optional;
 
 public class QuoteDao implements CrudDao<Quote, String>
 {
-    private static final String URL = "jdbc:postgresql://localhost:5432/stock_quote";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "postgres";
     private Connection connection;
 
     public QuoteDao() throws SQLException
     {
-        connect();
+
     }
 
-    private void connect() throws SQLException
+    public QuoteDao(Connection connection)
     {
-        connection = DriverManager.getConnection(URL, USER, PASSWORD);
-        System.out.println("Connected to the PostgreSQL server successfully.");
+        this.connection = connection;
     }
 
     public Quote save(Quote entity) throws IllegalArgumentException, SQLException
     {
-        connect();
         String sql = "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading, previous_close, change, change_percent, timestamp) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -45,14 +40,11 @@ public class QuoteDao implements CrudDao<Quote, String>
             return entity;
         } catch (SQLException e) {
             throw new IllegalArgumentException("Failed to fetch data from dao", e);
-        } finally {
-            if (connection != null && !connection.isClosed()) connection.close();
         }
     }
 
     public Optional<Quote> findById(String id) throws IllegalArgumentException, SQLException
     {
-        connect();
         String sql = "SELECT * FROM quote WHERE symbol = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
@@ -77,14 +69,11 @@ public class QuoteDao implements CrudDao<Quote, String>
             }
         } catch (SQLException e) {
             throw new IllegalArgumentException("Failed to fetch data from dao", e);
-        } finally {
-            if (connection != null && !connection.isClosed()) connection.close();
         }
     }
 
     public Iterable<Quote> findAll() throws SQLException
     {
-        connect();
         String sql = "SELECT * FROM quote";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -109,14 +98,11 @@ public class QuoteDao implements CrudDao<Quote, String>
             return quotes;
         } catch (SQLException e) {
             throw new IllegalArgumentException("Failed to fetch data from dao", e);
-        } finally {
-            if (connection != null && !connection.isClosed()) connection.close();
         }
     }
 
     public void deleteById(String id) throws SQLException
     {
-        connect();
         String sql = "DELETE FROM quote WHERE symbol = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -128,14 +114,11 @@ public class QuoteDao implements CrudDao<Quote, String>
             }
         } catch (SQLException e) {
             throw new IllegalArgumentException("Failed to delete record with ID: " + id, e);
-        } finally {
-            if (connection != null && !connection.isClosed()) connection.close();
         }
     }
 
     public void deleteAll() throws SQLException
     {
-        connect();
         String sql = "DELETE FROM quote";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -144,8 +127,6 @@ public class QuoteDao implements CrudDao<Quote, String>
             System.out.println(rowsAffected + " records deleted successfully.");
         } catch (SQLException e) {
             throw new IllegalArgumentException("Failed to delete all records", e);
-        } finally {
-            if (connection != null && !connection.isClosed()) connection.close();
         }
     }
 
