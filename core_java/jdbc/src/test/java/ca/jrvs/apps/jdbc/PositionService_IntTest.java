@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.PositionService;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Optional;
 
@@ -15,11 +17,13 @@ public class PositionService_IntTest {
     private PositionDao positionDao;
     private QuoteDao quoteDao;
     private PositionService positionService;
+    private Connection connection;
 
     @BeforeEach
     public void setUp() throws SQLException{
-        positionDao = new PositionDao();
-        quoteDao = new QuoteDao();
+        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/stock_quote", "postgres", "postgres");
+        positionDao = new PositionDao(connection);
+        quoteDao = new QuoteDao(connection);
         positionService = new PositionService();
         positionService.setPositionDao(positionDao);
         positionService.setQuoteDao(quoteDao);

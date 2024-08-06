@@ -6,29 +6,28 @@ import okhttp3.OkHttpClient;
 import service.PositionService;
 import service.QuoteService;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 public class Main
 {
     public static void main(String[] args)
     {
         Map<String, String> properties = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/properties.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] tokens = line.split(":");
-                properties.put(tokens[0], tokens[1]);
+        try (InputStream inputStream = Main.class.getClassLoader().getResourceAsStream("properties.txt")) {
+            if (inputStream == null) {
+                throw new IOException("Resource not found: properties.txt");
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            Properties props = new Properties();
+            props.load(inputStream);
+            for (String name : props.stringPropertyNames()) {
+                properties.put(name, props.getProperty(name));
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
